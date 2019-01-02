@@ -1,0 +1,42 @@
+body {
+  width: 90%;
+  margin: auto;
+  background-color: #F8FFF2;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #0095A4;
+}
+
+table {
+  width: 90%;
+}
+table tr {
+  line-height: 2em;
+}
+table thead th {
+  text-align: center;
+  color: #0095A4;
+  background-color: #F8FFF2;
+}
+table tr:nth-child(even) {
+  background-color: #DEE4D9;
+}
+table tr:nth-child(odd) {
+  background-color: #B9BEB4;
+}
+a {
+  text-decoration: none;
+  color: #988781 ;
+}
+.order-form-customer {
+  text-align: right;
+}
+tbody td  {
+  padding: 6px;
+}
+section h2 {
+  text-align: center;
+  padding-bottom: 2em;
+}

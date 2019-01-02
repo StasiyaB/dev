@@ -1,0 +1,36 @@
+body {
+  width: 90%;
+  margin: auto;
+  background-color: #F8FFF2;
+}
+
+h1 {
+  color: #0095A4;
+}
+h2 {
+  text-align: center;
+}
+table {
+  width: 90%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+table tr {
+  line-height: 2em;
+}
+table thead th {
+  text-align: center;
+  color: #0095A4;
+  background-color: #F8FFF2;
+}
+table tr:nth-child(even) {
+  background-color: #DEE4D9;
+}
+table tr:nth-child(odd) {
+  background-color: #B9BEB4;
+}
+tbody td  {
+  padding: 6px;
+}

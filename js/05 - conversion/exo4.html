@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript - Exemple TVA</title>
+</head>
+<body>
+    <h1>Le résultat TTC</h1>
+    <!-- Ajout d'un attribut HTML src pour charger un fichier JavaScript externe -->
+    <script src="exo4.js"></script>
+</body>
+</html>
+
+<!-- <script>
+'use strict'; 
+
+const TAUX_DE_TVA = 20.0;
+
+var montantHT;
+var montantTTC;
+var montantTVA;
+
+
+montantHT = window.prompt('Quel est le montant HT ?');
+
+montantHT = parseFloat(montantHT);
+
+montantTVA = (montantHT * TAUX_DE_TVA) / 100;
+
+montantTTC = montantHT + montantTVA;
+
+document.write('<p>Pour un montant HT de ' + montantHT + ' € il y a ' + montantTVA + ' € de TVA.</p>');
+document.write('<p>Le montant TTC est donc de ' + montantTTC + ' €.</p>');
+
+
+
+const TAUX_DE_TVA = 0.2;
+
+var montantHT = parseFloat(window.prompt('Quel est le montant HT ?'));
+
+var montantTTC = (montantHT * TAUX_DE_TVA) + montantHT;
+
+document.write('<p>Pour un montant HT de ' + montantHT + ' € il y a ' + montantTVA + ' € de TVA.</p>');
+
+document.write('<p>Le montant TTC est donc de ' + montantTTC + ' €.</p>');
+
+
+</script> -->

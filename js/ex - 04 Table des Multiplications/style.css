@@ -1,0 +1,58 @@
+.color {
+	background-color: #20c4e5;
+}
+table,
+td,
+tr {
+	border: 2px solid #82c7c4;
+	border-collapse: collapse;
+	background-color: #b0f2ee;	
+}
+table {
+	color: #123f4e;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+td,
+tr {
+	height: 3em;
+	width: 3em;
+	text-align: center;
+}
+table td:hover
+{
+    background-color: lightcyan;
+    color: red;
+    cursor: default;
+}
+h1 {
+	color: #123f4e;
+	font-family: sans-serif;
+}
+
+
+/*table
+{
+    font-family: "Courier New", monospace;
+}
+table td
+{
+    // structure 
+    height: 2em;
+    width: 2em;
+
+    // presentation 
+    background-color: lightblue;
+    text-align: center;
+}
+table td.color
+{
+    background-color: midnightblue;
+    color: white;
+}
+table td:hover
+{
+    background-color: lightcyan;
+    color: red;
+    cursor: default;
+}*/

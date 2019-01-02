@@ -1,0 +1,39 @@
+'use strict';
+var animals = ['canard', 'poule', 'vache', 'cochon', 'chèvre'];
+
+console.log(animals[1]); // poule
+console.log(animals[0]); // canard
+console.log(animals[4]);// chèvre
+document.write(animals[3]);
+
+
+
+var week = new Array(); 
+
+week[0] = "Lundi";
+week[1] = "Mardi";
+week[2] = 'Mercredi';
+week[3] = 'Jeudi';
+week[4] = 'Vendredi';
+week[5] = 'Samedi';
+week[6] = 'Dimanche';
+
+console.log(week[2]);
+console.log(week[6]);
+document.write("<p>"+week[0]+"</p>");
+
+var sunday = 6;
+var friday = 4;
+
+console.log(week[sunday]);
+document.write("<p>"+week[friday]+"</p>");
+
+var date = new Date();
+console.log(date);
+
+
+console.log(date.getDate());
+console.log(date.getDay());
+console.log(date.getMonth());
+console.log(date.getFullYear());
+

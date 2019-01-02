@@ -1,0 +1,50 @@
+.rectangle {
+    background-color: royalblue;
+    width: 400px;
+    height: 300px;
+    border-radius: 3%;           
+}
+.rectangle.important {
+    background-color: firebrick;
+}
+.rectangle.good {
+    background-color: limegreen;
+}
+.hidden {
+     display: none;
+}
+
+
+/*
+body
+{
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+.hide
+{
+    display: none;
+}
+
+.rectangle
+{
+    // structure 
+    height: 300px;
+    width: 400px;
+
+    // presentation 
+    background-color: royalblue;
+    border-radius: 8px;
+    transition: background-color 0.8s;
+}
+.rectangle.important
+{
+    background-color: firebrick;
+}
+.rectangle.important.good
+{
+    background-color: limegreen;
+}
+*/

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="todolist.css">
+    <title>Todolist</title>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+
+        <h1>Gestionnaire de tâches :-)</h1>
+
+          <?php if(empty($tab) == false): ?>
+          <!-- Formulaire listant toutes les tâches existantes avec possibilité de suppression. -->
+          <form class="form-todo" action="remove.php" method="POST">
+            <ul class="hide">
+              <?php foreach($tab as $index => $taskData): ?>
+              <li>
+                <input id="task-<?= $index ?>" type="checkbox" name="indexes[]" value="<?= $index ?>">
+                <label for="task-<?= $index ?>" class="<?= $taskData[3] ?> ">
+                    <?= $taskData[0] ?>
+                    <?php if(date_create($taskData[2]) < $now): ?>
+                        <strong>- en retard</strong>
+                    <?php endif ?>
+                </label>
+                <p><?= $taskData[1] ?></p>
+            </li>
+            <?php endforeach ?>
+              <li>
+                <input type="submit" value="Supprimer" title="Supprimer une tâche">
+              </li>
+            </ul>
+        </form>
+        <?php endif ?>
+
+      </section>
+
+      <section>
+        <form class="form" action="add.php" method="POST">
+          <fieldset>
+            <legend>Informations sur la tâche</legend>
+            <ul>
+              <li>
+                <label for="titre">Titre :</label>
+                <input id="title" type="text" name="title">
+              </li>
+              <li>
+                <label for="description">Tâche :</label>
+                <textarea id="description" name="description" rows="2"></textarea>
+              </li>
+              <li>
+                <label for="date">Date de fin :</label>
+                <select id="day" name="day">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+                <span>/</span>
+                <select id="month" name="month">
+                  <option value="1">Janvier</option>
+                  <option value="2">Fevrier</option>
+                  <option value="3">Mars</option>
+                  <option value="4">Avril</option>
+                  <option value="5">Mai</option>
+                  <option value="6">Juin</option>
+                  <option value="7">Juillet</option>
+                  <option value="8">Août</option>
+                  <option value="9">Septembre</option>
+                  <option value="10">Octobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Decembre</option>
+                </select>
+                <span>/</span>
+                <select id="year" name="year">
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                </select>
+              </li>
+              <li>
+                <label>Priorité :</label>
+                <input id="priority-low" type="radio" name="priority" value="priority-low">
+                <label for="priority-low">Basse</label>
+                <input id="priority-normal" type="radio" name="priority" value="priority-normal">
+                <label for="priority-normal">Normale</label>
+                <input id="priority-high" type="radio" name="priority" value="priority-high">
+                <label for="priority-high">Haute</label>
+              </li>
+              <li>
+                <input type="submit" value="Ajouter" title="Ajouter une nouvelle tâche">
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
