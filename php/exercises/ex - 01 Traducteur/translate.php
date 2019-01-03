@@ -22,8 +22,8 @@ if(array_key_exists('word', $_POST) == true)
 	echo '<p>Je ne connais pas le mot '.'"'.$word.'"'.'</p>';
 
 	}
-	 /*	$string = "ABcD";
-    strtolower($string); // change to lower case "abcd"*/
+	 $string = "ABcD";
+    strtolower($string); // change to lower case "abcd"
 }
 
 include "index.phtml";
