@@ -12,26 +12,89 @@ header .bg-img {
   background-size: cover;
   padding: 250px 0;
 }
-div {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.form {
+	margin: 0 0 0 5%;
+	display: flex;
 }
 
-h2 {
-  padding-right: 6px;
+.form form {
+	margin-left: 2%;
+	margin-top: 6px;
+    display: flex;
 }
+
 h1 {
   text-align: center;
+  margin: 20px 0 60px;
 }
+
+#search {
+	margin-left: 1%;
+}
+
 ul li {
   list-style: none;
   padding-left: 0;
 }
 
 ul {
-  width: 30%;
+  width: 50%;
   border: solid 3px black;
   border-radius: 8px;
   padding: 10px;
+}
+
+#annex div {
+  width: 50%;
+  border: solid 3px black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/************************************/
+
+
+
+.info {
+	display: inline-block;
+	margin-top: 50px;
+}
+
+
+.info #list {
+	width: 130%;
+	display: inline-block;
+	padding: 20px 2%;
+    margin-left: 5%;
+    vertical-align: top;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+
+.info #list li {
+	list-style: none;
+	margin-bottom: 5px;
+}
+
+.info #result {
+	margin-left: 5%;
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid black;
+	border-radius: 10px;
+	text-align: center;
+	padding: 0 2% 20px;
+}
+
+.info .hide {
+	display: none !important;
 }

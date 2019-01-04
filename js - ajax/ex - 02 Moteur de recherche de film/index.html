@@ -19,22 +19,66 @@
     <main class="container">
       <h1>Moteur de recherche de film</h1>
 
-      <div>
+      <div class="form">
         <h2>Trouver un film :</h2>
 
-        <form class="" action="index.html" method="post">
+        <form>
           <input id="target" type="text" name="search" value="" placeholder="">
           <button id="search" type="button" name="button">Valider</button>
         </form>
       </div>
 
-      <div id="paraData" data-name="Paul" data-id="124" data-k="k">
+      <div class="info">
+    		<div id="list" class="hide">
 
-      </div>      
+    		</div>
+    		<div id="annex" class="hide">
+    			<p>hello</p>
+    		</div>
+    	</div>
 
     </main>
   </body>
-  <script type="text/javascript" src="js/ajax.js"></script>
-  <script type="text/javascript" src="js/events.js"></script>
+  <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/event.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </html>
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+
+	</header>
+	<h1>Moteur de recherche de film</h1>
+	<div class="form">
+		<h2>Trouver un film :<h2>
+		<form>
+			<input type="text" name="search" id="search">
+			<input type="submit" name="send" id="send">
+		</form>
+	</div>
+	<div class="info">
+		<div id="list" class="hide">
+
+		</div>
+		<div id="result" class="hide">
+			<p>hello</p>
+		</div>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/events.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
+-->
