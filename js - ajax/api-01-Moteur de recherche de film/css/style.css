@@ -1,81 +1,40 @@
 .container {
   width: 85%;
   margin: auto;
-  /*padding-top: 40px;*/
   padding-bottom: 40px;
 }
-header .bg-img {
-  width: 100%;
+header .bg-image {
   background-image: url(../bg-img.jpg);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  padding: 250px 0;
+  padding-bottom: 50%;
 }
-.form {
-	margin: 0 0 0 5%;
-	display: flex;
-}
-
-.form form {
-	margin-left: 2%;
-	margin-top: 6px;
-    display: flex;
-}
-
 h1 {
   text-align: center;
   margin: 20px 0 60px;
 }
-
-#search {
-	margin-left: 1%;
-}
-
-ul li {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul {
-  width: 50%;
-  border: solid 3px black;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-#annex div {
-  width: 50%;
-  border: solid 3px black;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.flex {
+.form {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
 }
-
-/************************************/
-
-
+h2 {
+  margin-right: 6px;
+}
 
 .info {
 	display: inline-block;
 	margin-top: 50px;
 }
 
-
 .info #list {
 	width: 130%;
 	display: inline-block;
 	padding: 20px 2%;
-    margin-left: 5%;
-    vertical-align: top;
-    border: 2px solid black;
-    border-radius: 10px;
+  margin-left: 5%;
+  vertical-align: top;
+  border: 2px solid black;
+  border-radius: 10px;
 
 }
 
@@ -84,7 +43,7 @@ ul {
 	margin-bottom: 5px;
 }
 
-.info #result {
+.info #annex {
 	margin-left: 5%;
 	width: 50%;
 	display: inline-block;
