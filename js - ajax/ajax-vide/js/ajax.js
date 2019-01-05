@@ -20,9 +20,7 @@ function ajaxGetJasonData(response) {
   $('#target').append('<ul>');
 
   for (var i =0; i < response.length; i++) {
-    $('#target ul').append('<li><p><strong>Prénom :</strong> '
-    +response[i].firstName+ '</p>
-    <p><em>Téléphone :</em> '+response[i].phone+'</p></li>')
+    $('#target ul').append('<li><p><strong>Prénom :</strong> '+response[i].firstName+'</p><p><em>Téléphone :</em> '+response[i].phone+'</p></li>')
   }
 
 }
