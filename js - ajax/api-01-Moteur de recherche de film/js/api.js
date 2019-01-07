@@ -2,7 +2,7 @@
 
 function showTitle(response) {
 
-
+  console.log(response);
   var data = response.results;
 	var list = $('<ul>');
 
