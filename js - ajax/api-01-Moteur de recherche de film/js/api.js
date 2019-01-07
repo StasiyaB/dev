@@ -2,7 +2,6 @@
 
 function showTitle(response) {
 
-  console.log(response);
   var data = response.results;
 	var list = $('<ul>');
 
@@ -15,39 +14,41 @@ function showTitle(response) {
      $("#list").removeClass('hide');
 
 console.log(response.results);
-}
-function displayDetails(response) {
 
-	var result = $('<div>');
+  }
 
-	var img = $('<img>').attr('src', url_img+response.poster_path).css('width', '250px');
-	var title = $('<h1>').append(response.title);
-	var year = $('<h2>').append(response.release_date);
-	var desc = $('<p>').append( response.overview );
-	var note = $('<p>').append( response.vote_average );
-	var companies = $('<div>').append('<h2>Companies</h2>')
-	companies.append('<ul>');
+  function displayDetails(response) {
 
-    result.append(img).append(title).append(year).append(desc).append(note).append(companies);
+  	var result = $('<div>');
 
-	$('#annex').html(result);
+  	var img = $('<img>').attr('src', url_img+response.poster_path).css('width', '250px');
+  	var title = $('<h1>').append(response.title);
+  	var year = $('<h2>').append(response.release_date);
+  	var desc = $('<p>').append( response.overview );
+  	var note = $('<p>').append( response.vote_average );
+  	var companies = $('<div>').append('<h2>Companies</h2>')
+  	companies.append('<ul>');
 
-  for(var i = 0; i < response.production_companies.length; i++) {
+      result.append(img).append(title).append(year).append(desc).append(note).append(companies);
 
-    	getCompanyWebSite(response.production_companies[i].id)
+  	$('#annex').html(result);
 
-    }
-}
+    for(var i = 0; i < response.production_companies.length; i++) {
 
-function getCompanyWebSite(id) {
+      	getCompanyWebSite(response.production_companies[i].id)
 
-	$.getJSON('https://api.themoviedb.org/3/company/'+id+'?api_key=2ee2c5b569240ea2a2a879dd9c8a822c', displayCompany);
+      }
+  }
 
-}
+  function getCompanyWebSite(id) {
 
-function displayCompany(response) {
+  	$.getJSON('https://api.themoviedb.org/3/company/'+id+'?api_key=2ee2c5b569240ea2a2a879dd9c8a822c', displayCompany);
 
-	console.log(response);
-	$('#result ul').append('<li><a href="'+response.homepage+'" id="'+response.id+'">'+response.name+'</li></a>');
+  }
 
-}
+  function displayCompany(response) {
+
+  	console.log(response);
+  	$('#result ul').append('<li><a href="'+response.homepage+'" id="'+response.id+'">'+response.name+'</li></a>');
+
+  }

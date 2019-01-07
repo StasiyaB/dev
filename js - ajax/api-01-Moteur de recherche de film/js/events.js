@@ -7,15 +7,15 @@ function search(event) {
 
     	event.preventDefault();
       var target = $('input[name=search]').val();
-      $.getJSON('https://api.themoviedb.org/3/search/movie?api_key=2ee2c5b569240ea2a2a879dd9c8a822c&query='+target, showTitle);
+      $.getJSON('https://api.themoviedb.org/3/search/movie?api_key='+API_KEY+'&query='+target, showTitle);
 
-    }
+  }
 
-function onClickShowDetails() {
+  function onClickShowDetails() {
 
-	var id = $(this).data('id');
-    console.log(id);
+  	var id = $(this).data('id');
+      console.log(id);
 
-    $.getJSON('https://api.themoviedb.org/3/movie/'+id+'?api_key='+API_KEY, displayDetails);
+      $.getJSON('https://api.themoviedb.org/3/movie/'+id+'?api_key='+API_KEY, displayDetails);
 
-}
+  }
