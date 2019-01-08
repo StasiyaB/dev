@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <title>Showtime</title>
+  </head>
+  <body>
+    <header class="container">
+      <h1 id="title"></h1>
+    </header>
+    <main class="container">
+      <section>
+        <article>
+          <img id="pict" src="" alt="image">
+
+          <div class="detail">
+            <p>
+              <strong>Date de sortie</strong>:<br>
+              <strong>De</strong>
+              <span id="author"></span><br>
+              <strong>Avec</strong>
+              <span id="cast"></span><br>
+              <strong>Genre</strong>
+              <span id="theme"></span><br>
+              <strong>Distributeur</strong>
+              <span id="distri">Bac Films</span><br>
+            </p>
+          </div>
+
+          <h3>Synopsis</h3>
+
+          <p class="justify" id="desc"></p>
+
+          <div class="clear"></div>
+        </article>
+      </section>
+      <section>
+        <div class="iframe-container">
+          <iframe id="video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section class="icons">
+
+      </section>
+      <section class="bas">
+        <h3>Réserver mon Billet / Séances</h3>
+        <div id="affiche">
+          <p style="margin-bottom: 150px;"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script type="text/javascript" src="js/utilities.js"></script>
+  <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/showtimes.js"></script>
+</html>
