@@ -18,7 +18,7 @@ console.log(response.results);
   }
 
   function displayDetails(response) {
-
+    console.log('declenchement');
   	var result = $('<div>');
 
   	var img = $('<img>').attr('src', url_img+response.poster_path).css('width', '250px');
@@ -38,6 +38,9 @@ console.log(response.results);
       	getCompanyWebSite(response.production_companies[i].id)
 
       }
+
+      $("#annex").removeClass('hide');
+
   }
 
   function getCompanyWebSite(id) {
@@ -49,6 +52,6 @@ console.log(response.results);
   function displayCompany(response) {
 
   	console.log(response);
-  	$('#result ul').append('<li><a href="'+response.homepage+'" id="'+response.id+'">'+response.name+'</li></a>');
+  	$('#annex ul').append('<li><a href="'+response.homepage+'">'+response.name+'</a></li>');
 
   }

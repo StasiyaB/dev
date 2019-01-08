@@ -7,6 +7,7 @@ function search(event) {
 
     	event.preventDefault();
       var target = $('input[name=search]').val();
+      console.log(target);
       $.getJSON('https://api.themoviedb.org/3/search/movie?api_key='+API_KEY+'&query='+target, showTitle);
 
   }
