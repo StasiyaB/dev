@@ -7,6 +7,7 @@
             <li>
                 <label for="title">Titre :</label>
                 <input type="text" id="title" name="title">
+
             </li>
             <li>
                 <label class="textarea" for="contents">Article :</label>
@@ -15,14 +16,17 @@
             <li>
                 <label for="author">Auteur :</label>
                 <select id="author" name="author">
-                        <option value="1">John Doe</option>
+                  <?php foreach ($authors as $author): ?>
+                    <option value="<?=$author['Id']?>"><?=$author['FirstName'].' '.$author['LastName']?></option>
+                  <?php endforeach; ?>
                 </select>
             </li>
             <li>
                 <label for="category">Catégorie :</label>
                 <select id="category" name="category">
-                        <option value="2">Jeux-Vidéos</option>
-                        <option value="1">Voyages</option>
+                  <?php foreach ($categories as $category): ?>
+                    <option value="<?=$category['Id']?>"><?=$category['Name']?></option>
+                  <?php endforeach; ?>
                 </select>
             </li>
             <li>
