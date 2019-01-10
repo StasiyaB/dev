@@ -8,15 +8,15 @@
       <i class="fa fa-hand-o-right"></i>&nbsp;
         <!-- Lien vers article de blog détaillé avec les commentaires -->
             <a href="show_post.php?Id=<?=$title['Id']?>" title="Consulter l'article">
-              <?=$title['Title']?>
+              <?= htmlspecialchars($title['Title'])?>
             </a>
       </h3>
       <!-- Seul un extrait de l'article du blog est affiché -->
         <article>
-          <?=$title['Content']?>[...]
+          <?= substr(htmlspecialchars($title['Content']), 0, 100)?>&nbsp;[...]
         </article>
       <small>
-        Rédigé par <?=$title['FirstName'].' '.$title['LastName']?> le <?=$title['CreationDate']?>
+        Rédigé par <?= htmlspecialchars($title['FirstName']).' '.htmlspecialchars($title['LastName'])?> le <?=htmlspecialchars($title['CreationDate'])?>
       </small>
     </li>
   <?php endforeach; ?>

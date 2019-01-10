@@ -5,7 +5,13 @@ include 'application/bdd_connexion.php';
 
 $query = $pdo->prepare
 (
-	'SELECT *
+	'SELECT
+				Post.Id,
+        Title,
+        Content,
+        CreationDate,
+        FirstName,
+        LastName
   FROM Post
   INNER JOIN Author
   ON Post.Author_Id=Author.Id'

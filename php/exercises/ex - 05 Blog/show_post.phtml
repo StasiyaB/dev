@@ -4,21 +4,27 @@
 
 <!-- Article du blog -->
 <section class="post">
-    <h3></h3>
-    <article></article>
+    <h3><?=$post['Title']?></h3>
+    <article>
+      <?=$post['Content']?>
+    </article>
     <small>
+      Rédigé par <?=$post['FirstName'].' '.$post['LastName']?> le <?=$post['CreationDate']?>
     </small>
 </section>
 
 <hr>
 
 <!-- Liste des commentaires de l'article du blog -->
-<ul class="comment-list">
-            <li class="comment">
-            <h4><i class="fa fa-comment"></i> Rédigé par </h4>
-            <article></article>
-        </li>
-    </ul>
+  <ul class="comment-list">
+
+    <li class="comment">
+      <h4><i class="fa fa-comment"></i>&nbsp;Rédigé par <?=htmlspecialchars($postComment['Pseudo'])?></h4>
+      <article>
+        <?=substr(htmlspecialchars($postComment['Contents']), 0, 100)?>
+      </article>
+    </li>
+  </ul>
 
 <hr>
 
@@ -26,7 +32,7 @@
 <form class="generic-form" action="add_comment.php" method="POST">
 
     <!-- Utilisation d'un champ caché pour spécifier à quel article rattacher le commentaire -->
-    <input type="hidden" name="postId" value="11">
+    <input type="hidden" name="postId" value="<?= $_GET['Id']?>">
 
     <fieldset>
         <legend><i class="fa fa-comment-o"></i> Nouveau commentaire</legend>
