@@ -17,8 +17,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr>      
-      <td><a class="edit" href="edit_post.php?id=7"><i class="fa fa-pencil"></i></a> <a class="remove" href="delete_post.php?id=7"><i class="fa fa-remove"></i></a></td>
-    </tr>
+    <?php foreach ($adminPost as $value): ?>
+      <tr>
+        <td><?=$value['Title']?></td>
+        <td><?=$value['Content']?></td>
+        <td><?=$value['FirstName']?> <?=$value['LastName']?></td>
+        <td><?=$value['Name']?></td>
+        <td>
+          <a class="edit" href="edit_post.php?id=<?=$value['Id']?>"><i class="fa fa-pencil"></i></a>
+          <a class="remove" href="delete.php?id=<?=$value['Id']?>"><i class="fa fa-remove"></i></a>
+        </td>
+      </tr>
+    <?php endforeach; ?>
   </tbody>
 </table>

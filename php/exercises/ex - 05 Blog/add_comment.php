@@ -25,7 +25,7 @@ if(empty($_POST) == false) {
 
 		$query->execute( [$nickName	, $contents, $id] );
 
-		header('Location: show_post.php?Id='.$id);
+		header('Location: show_post.php?id='.$id);
     exit();
 }
 ?>

@@ -1,5 +1,10 @@
 <?php
 
+if(array_key_exists('id', $_GET) == false || ctype_digit($_GET['id']) == false) {
+    header('Location: index.php');
+    exit();
+}
+
 $template = 'show_post';
 
 include 'application/bdd_connexion.php';
@@ -19,11 +24,11 @@ $query = $pdo->prepare
   WHERE Post.Id = ?'
 );
 
-$query->execute(array($_GET['Id']));
+$query->execute(array($_GET['id'])); //id - is get from URL
 
 $post = $query->fetch(PDO::FETCH_ASSOC);
 
-var_dump($post);
+//var_dump($post);
 
 $query = $pdo->prepare
 (
@@ -32,11 +37,11 @@ $query = $pdo->prepare
   WHERE Post_Id = ?'
 );
 
-$query->execute(array($_GET['Id']));
+$query->execute(array($_GET['id']));
 
-$postComment = $query->fetch(PDO::FETCH_ASSOC);
+$postComment = $query->fetchAll(PDO::FETCH_ASSOC);
 
-var_dump($postComment);
+//var_dump($postComment);
 
 include 'layout.phtml';
 ?>

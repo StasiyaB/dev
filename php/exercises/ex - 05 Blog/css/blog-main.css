@@ -27,3 +27,11 @@ hr
     margin-bottom: 2em;
     margin-top: 2em;
 }
+
+table {
+  width: 100%;
+}
+table td, th {
+  padding: 6px;
+  text-align: center;
+}
