@@ -2,16 +2,20 @@
 
 session_start();
   var_dump($_SESSION);
-$user = [
-			'email' => 'test@mail.fr',
-            'psw' => 'azerty',
-			'firstName' => 'Rob',
-            'lastName' => 'Durant',
-            'age' => 32
-		];
+
 
     if (!empty($_POST)) {
     	var_dump($_POST);
+      $pdo->exec('SET NAMES UTF8');
+
+          	$query = $pdo->prepare
+      	(
+      	    'SELECT * FROM users WHERE email= ?'
+      	);
+
+      	$query->execute( [ $_POST['email'] ] );
+
+          $user = $query->fetch(PDO::FETCH_ASSOC);
 
       if( $user['email'] == $_POST['email'] && $user['psw'] == $_POST['psw'] ) {
 
