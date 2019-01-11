@@ -35,3 +35,7 @@ table td, th {
   padding: 6px;
   text-align: center;
 }
+caption {
+  font-style: italic;
+  padding: 10px;
+}

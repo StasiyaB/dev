@@ -1,5 +1,10 @@
 <?php
 
+if(array_key_exists('id', $_GET) == false || ctype_digit($_GET['id']) == false) {
+    header('Location: admin.php');
+    exit();
+}
+
 $template = 'edit_post';
 
 include 'application/bdd_connexion.php';
@@ -7,7 +12,7 @@ include 'application/bdd_connexion.php';
 $query = $pdo->prepare
 (
 	'SELECT
-        Id
+        Id,
         Title,
         Content
   FROM Post
@@ -18,7 +23,7 @@ $query->execute(array($_GET['id'])); //id - is get from URL
 
 $editPost = $query->fetch(PDO::FETCH_ASSOC);
 
-var_dump($editPost);
+//var_dump($editPost);
 
 if (empty($_POST)== false){
   $query = $pdo->prepare
