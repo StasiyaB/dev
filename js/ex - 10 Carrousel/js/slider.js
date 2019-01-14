@@ -38,7 +38,7 @@ function launch() {
 }
 
 function plus() {
-    
+
     if (i >= images.length -1) {
     		i = 0;
     } else {
@@ -49,7 +49,7 @@ function plus() {
 }
 
 function minus() {
-    
+
     if (i <= 0) {
     		i = 5;
     } else {
@@ -60,14 +60,14 @@ function minus() {
 }
 
 function shuffle() {
-	
+
 	i = getRandomInteger(0, images.length -1);
 	image.src = images[i].image;
 	caption.textContent = images[i].caption;
 }
 
 function slider() {
-  
+
   play.classList.toggle('fa-pause');
   play.classList.toggle('fa-play');
 
@@ -157,84 +157,84 @@ function onToolbarToggle(){
 function goToNext() {
 
   if (index >= slides.length - 1 ) {
-    
+
       index = 0;
-    
+
     } else {
-    
-      index++;    
+
+      index++;
     }
-    
+
     pict.src = slides[index].image;
-  fig.textContent = slides[index].legend;   
+  fig.textContent = slides[index].legend;
 
 }
 
 
 function goToPrev() {
-  
+
     if (index <= 0 ) {
-    
+
       index = slides.length - 1 ;
-    
+
     } else {
-    
+
       index--;
     }
-    
+
     pict.src = slides[index].image;
-  fig.textContent = slides[index].legend;   
+  fig.textContent = slides[index].legend;
 
 }
 
 function goToRandom() {
 
   index = getRandomInteger(0, slides.length -1 );
-    
+
     pict.src = slides[index].image;
-  fig.textContent = slides[index].legend;   
+  fig.textContent = slides[index].legend;
 
 }
 
 function goToPlay() {
   if (isPlaying == false) {
-    
+
       timer = window.setInterval(goToNext, 2000);
         isPlaying = true;
-        
+
     } else {
       window.clearInterval(timer);
         isPlaying = false;
 
     }
-    
+
     var faPlay = document.querySelector('#slider-toggle i');
     faPlay.classList.toggle('fa-play');
     faPlay.classList.toggle('fa-pause');
 
 }
 function onPushButtons(event) {
-  
+
     console.log(event);
-    
+
     if (isPlaying == true) {
-        goToPlay(); 
+        goToPlay();
     }
-    
+
     switch(event.keyCode) {
-      
+
         case 39:
         goToNext();
         break;
-        
+
         case 37:
         goToPrev();
         break
-        
+
         case 82:
         goToRandom();
         break;
-        
+
         case 32:
         goToPlay();
         break
@@ -296,7 +296,7 @@ function launch() {
 }
 
 function plus() {
-    
+
     if (i >= images.length -1) {
     		i = 0;
     } else {
@@ -307,7 +307,7 @@ function plus() {
 }
 
 function minus() {
-    
+
     if (i <= 0) {
     		i = 5;
     } else {
@@ -318,14 +318,14 @@ function minus() {
 }
 
 function shuffle() {
-	
+
 	i = getRandomInteger(0, images.length -1);
 	image.src = images[i].image;
 	caption.textContent = images[i].caption;
 }
 
 function slider() {
-  
+
   play.classList.toggle('fa-pause');
   play.classList.toggle('fa-play');
 
@@ -415,84 +415,84 @@ function onToolbarToggle(){
 function goToNext() {
 
   if (index >= slides.length - 1 ) {
-    
+
       index = 0;
-    
+
     } else {
-    
-      index++;    
+
+      index++;
     }
-    
+
     pict.src = slides[index].image;
-  fig.textContent = slides[index].legend;   
+  fig.textContent = slides[index].legend;
 
 }
 
 
 function goToPrev() {
-  
+
     if (index <= 0 ) {
-    
+
       index = slides.length - 1 ;
-    
+
     } else {
-    
+
       index--;
     }
-    
+
     pict.src = slides[index].image;
-  fig.textContent = slides[index].legend;   
+  fig.textContent = slides[index].legend;
 
 }
 
 function goToRandom() {
 
   index = getRandomInteger(0, slides.length -1 );
-    
+
     pict.src = slides[index].image;
-  fig.textContent = slides[index].legend;   
+  fig.textContent = slides[index].legend;
 
 }
 
 function goToPlay() {
   if (isPlaying == false) {
-    
+
       timer = window.setInterval(goToNext, 2000);
         isPlaying = true;
-        
+
     } else {
       window.clearInterval(timer);
         isPlaying = false;
 
     }
-    
+
     var faPlay = document.querySelector('#slider-toggle i');
     faPlay.classList.toggle('fa-play');
     faPlay.classList.toggle('fa-pause');
 
 }
 function onPushButtons(event) {
-  
+
     console.log(event);
-    
+
     if (isPlaying == true) {
-        goToPlay(); 
+        goToPlay();
     }
-    
+
     switch(event.keyCode) {
-      
+
         case 39:
         goToNext();
         break;
-        
+
         case 37:
         goToPrev();
         break
-        
+
         case 82:
         goToRandom();
         break;
-        
+
         case 32:
         goToPlay();
         break
