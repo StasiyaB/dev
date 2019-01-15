@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 include 'application/bdd_connexion.php';
 

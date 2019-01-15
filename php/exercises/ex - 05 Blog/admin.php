@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $template = 'admin';
 include 'application/bdd_connexion.php';

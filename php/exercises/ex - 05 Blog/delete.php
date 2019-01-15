@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if(!array_key_exists('id', $_GET) OR !ctype_digit($_GET['id'])){
             header('Location: admin.php');
             exit();

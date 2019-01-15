@@ -1,4 +1,9 @@
-<a href="#"><h2><i class="fa fa-home"></i> Accueil</h2></a>
+
+<?php if (array_key_exists('FirstName', $_SESSION) == false){ ?>
+<h2><i class="fa fa-home"></i> Accueil</h2>
+<?php }else {?>
+<h2><i class="fa fa-home"></i> Accueil : Bonjour <?= $_SESSION['FirstName']?></h2>
+<?php } ?>
 
 <ul class="post-list">
 

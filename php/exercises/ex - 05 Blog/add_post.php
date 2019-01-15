@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $template = 'add_post';
 
