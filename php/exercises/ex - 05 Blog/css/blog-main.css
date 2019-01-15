@@ -30,6 +30,7 @@ hr
 
 table {
   width: 100%;
+  margin-bottom: 12px; 
 }
 table td, th {
   padding: 6px;
@@ -38,4 +39,15 @@ table td, th {
 caption {
   font-style: italic;
   padding: 10px;
+}
+
+.popup {
+  font-weight: bolder;
+  text-align: center;
+  width: 35%;
+  border: solid red 2px;
+  padding-left: 12px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 36px;
 }

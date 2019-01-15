@@ -31,3 +31,47 @@
     <?php endforeach; ?>
   </tbody>
 </table>
+<hr>
+
+<nav>
+  <a href="add_post.php">Ajouter une nouvele Catégorie</a>
+</nav>
+
+<form class="" action="add_category.php" method="post">
+
+  <input id="category" type="text" placeholder="" name="Name">
+  <button type="submit" name="submit"><i class="fas fa-pencil-alt"></i></button>
+</form>
+
+<caption>Liste des Categorie</caption>
+
+
+
+<hr>
+
+<nav>
+  <a href="add_author.php">Gérer des Utilisateurs</a>
+</nav>
+<table>
+  <caption>Liste des Utilisateurs</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <a class="edit" href="edit_post.php?id="><i class="fas fa-pencil-alt"></i></a>
+          <a class="remove" href="delete.php?id="><i class="fa fa-remove"></i></a>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
+<hr>

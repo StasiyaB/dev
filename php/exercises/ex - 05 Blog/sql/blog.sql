@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 11 jan. 2019 à 10:08
+-- Généré le :  mar. 15 jan. 2019 à 17:23
 -- Version du serveur :  5.7.24-0ubuntu0.16.04.1
 -- Version de PHP :  7.2.11-2+ubuntu16.04.1+deb.sury.org+1
 
@@ -63,7 +63,10 @@ CREATE TABLE `Category` (
 INSERT INTO `Category` (`Id`, `Name`) VALUES
 (1, 'Jeux-Video'),
 (2, 'Voyages'),
-(3, 'Restauration');
+(3, 'Restauration'),
+(4, 'a'),
+(5, 'Music'),
+(6, 'Dogs');
 
 -- --------------------------------------------------------
 
@@ -79,6 +82,14 @@ CREATE TABLE `Comments` (
   `Post_Id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `Comments`
+--
+
+INSERT INTO `Comments` (`Id`, `Pseudo`, `CreationDate`, `Contents`, `Post_Id`) VALUES
+(1, 'f-f', '2019-01-15 10:21:06', 'bla-bla-bla', 1),
+(2, 'f-f', '2019-01-15 11:36:42', '454545454545', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -93,6 +104,42 @@ CREATE TABLE `Post` (
   `Author_Id` int(11) NOT NULL,
   `Category_Id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `Post`
+--
+
+INSERT INTO `Post` (`Id`, `Title`, `Content`, `CreationDate`, `Author_Id`, `Category_Id`) VALUES
+(1, 'shopping', 'bla bla bla', '2019-01-15 10:20:50', 3, 2),
+(2, 'shopping', '56', '2019-01-15 11:33:04', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Users`
+--
+
+CREATE TABLE `Users` (
+  `Id` int(11) NOT NULL,
+  `Mail` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `FirstName` varchar(100) NOT NULL,
+  `LastName` varchar(100) NOT NULL,
+  `NickName` varchar(100) NOT NULL,
+  `Role` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `Users`
+--
+
+INSERT INTO `Users` (`Id`, `Mail`, `Password`, `FirstName`, `LastName`, `NickName`, `Role`) VALUES
+(1, 'baryash.anastasiya@gmail.com', 'kbcbxrf', 'Anastasiya', 'Baryash', 'Chmfox', 'admin'),
+(2, 'gigi@gogo.com', 'azert', 'Gigi', 'White', 'gigi', 'user'),
+(3, 'lama@gogo.com', 'wxcvbn', 'Lama', 'Black', 'lama', 'user'),
+(4, 'ginger@gogo.com', 'qsdfg', 'Kiki', 'Red', 'ginger', 'user'),
+(6, 'ginger@gogo.com', 'qsdfg', 'Kiki', 'Red', 'ginger', 'user'),
+(7, 'green@gogo.com', 'poiuy', 'Dodo', 'Green', 'green', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -123,6 +170,12 @@ ALTER TABLE `Post`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Index pour la table `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -136,19 +189,25 @@ ALTER TABLE `Author`
 -- AUTO_INCREMENT pour la table `Category`
 --
 ALTER TABLE `Category`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `Comments`
 --
 ALTER TABLE `Comments`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `Post`
 --
 ALTER TABLE `Post`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

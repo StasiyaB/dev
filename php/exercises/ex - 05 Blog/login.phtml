@@ -1,13 +1,22 @@
+
+<h2><i class="fas fa-pencil-alt"></i> Connectez vous</h2>
+
+<?php if ($error == true ) {?>
+<div class="popup">
+    <p> <?= $message ?></p>
+</div>
+<?php } ?>
+
 <form class="generic-form" action ="login.php" method="POST">
 	<fieldset>
-		<legend><i class="fas fa-forward"></i> Se connecter</legend>
+		<legend><i class="fas fa-forward"></i> Les identifiants</legend>
 		<ul>
 			<li>
 				<label for="Mail">Email :</label>
 				<input type="text" placeholder="mail" name="Mail">
 			</li>
 			<li>
-				<label for="Password">Mot de Pass :</label>
+				<label for="Password">Mot de Passe :</label>
 				<input type="text" placeholder="password" name="Password">
 			</li>
 			<li>
