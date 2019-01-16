@@ -1,0 +1,49 @@
+body {
+  background-image: url(../img/image.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #6DC547;
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+  padding-top: 20px;
+
+}
+
+#commande {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#attack {
+  color: white;
+  background-color: #DA3036;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+#defend {
+  color: white;
+  background-color: #B35FA8;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+}
+ #leave {
+   color: white;
+   background-color: #6DC547;
+   border: none;
+   border-radius: 8px;
+   padding: 12px;
+ }
+
+p {
+  font-size: 18px;
+  font-family: sans-serif;
+  color: grey;
+}
