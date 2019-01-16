@@ -1,6 +1,19 @@
 <?php
  session_start();
+
  include 'application/bdd_connexion.php';
+
+ $query = $pdo->prepare
+ (
+ 	'SELECT* FROM Category'
+ );
+
+ $query->execute();
+
+ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
+
+ //var_dump($categories);
+
 
  if(empty($_POST) == false) {
 
@@ -16,4 +29,5 @@
  		header('Location: admin.php');
     exit();
  }
+
 ?>

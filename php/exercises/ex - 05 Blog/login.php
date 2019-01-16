@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'application/hash.php';
 
 $template = 'login';
 
@@ -11,7 +12,7 @@ $message = '';
 
     if (!empty($_POST)) {
 
-      //var_dump($_POST);
+      var_dump($_POST);
 
       include 'application/bdd_connexion.php';
       $pdo->exec('SET NAMES UTF8');
@@ -33,7 +34,7 @@ $message = '';
         $error = true;
 		    $message = "Votre adresse mail n'existe pas...";
 
-    } else if ( $_POST['Password'] == $user['Password'] ) {
+    } else if (password_verify($_POST['Password'], $user['Password']) == true ) {
         var_dump('connecté');
 
         $_SESSION['Mail']      = $user['Mail'];

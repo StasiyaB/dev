@@ -1,47 +1,46 @@
+<h2><i class="fa fa-cogs"></i> Panneau d'administration</h2>
 
-<h2><i class="fa fa-cogs"></i>Panneau d'administration</h2>
-
-<nav>
-  <a href="add_post.php">Rédiger un nouvel article</a>
+<nav style="margin-bottom: 20px; margin-top: 30px; ">
+    <a href="add_post.php">Rédiger un nouvel article</a>
 </nav>
 
 <table>
-  <caption>Liste des articles</caption>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Article</th>
-      <th>Auteur</th>
-      <th>Catégorie</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($adminPost as $value): ?>
-      <tr>
-        <td><?=$value['Title']?></td>
-        <td><?=$value['Content']?></td>
-        <td><?=$value['FirstName']?> <?=$value['LastName']?></td>
-        <td><?=$value['Name']?></td>
-        <td>
-          <a class="edit" href="edit_post.php?id=<?=$value['Id']?>"><i class="fas fa-pencil-alt"></i></a>
-          <a class="remove" href="delete.php?id=<?=$value['Id']?>"><i class="fa fa-remove"></i></a>
-        </td>
-      </tr>
-    <?php endforeach; ?>
-  </tbody>
+    <caption>Liste des articles</caption>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Article</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($posts as $post): ?>
+            <tr>
+                <td><a href="show_post.php?id=<?= intval($post['Id']) ?>" target="_blank"><?= htmlspecialchars($post['Title']) ?></a></td>
+                <td><?= substr(htmlspecialchars($post['Contents']), 0, 200) ?></td>
+                <td><?= htmlspecialchars($post['FirstName']) ?> <?= htmlspecialchars($post['LastName']) ?></td>
+                <td><?= htmlspecialchars($post['Category_Name']) ?></td>
+                <td>
+                    <a class="edit" href="edit_post.php?id=<?= intval($post['Id']) ?>"><i class="fa fa-pencil"></i></a>
+                    <a class="remove" href="<?=$config?>delete_post.php?id=<?= intval($post['Id']) ?>"><i class="fa fa-remove"></i></a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
 </table>
-<hr>
-<!-- ----------------------------------- CATEGORY ----------------------- -->
-<nav>
-  <a href="add_post.php">Ajouter une nouvele Catégorie</a>
+
+<hr/>
+<nav style="margin-bottom: 5px; margin-top: 30px; ">
+    <a>Rédiger une nouvelle catégorie</a>
+    <form action="<?=$config?>add_cat.php" method="post">
+        <input type="text" name="catName">
+        <input type="submit" value="créer">
+    </form>
 </nav>
 
-<form class="" action="add_cat.php" method="post">
 
-  <input id="category" type="text" placeholder="" name="Name">
-  <button type="submit" name="submit"><i class="fas fa-pencil-alt"></i></button>
-</form>
 
 <table>
     <caption>Liste des Categories</caption>
@@ -55,25 +54,25 @@
     <tbody>
         <?php foreach($categories as $category): ?>
             <tr>
-
+                
                 <td><?= htmlspecialchars($category['Id'])?></td>
                 <td>
-                    <form action="edit_cat.php?id=<?=$category['Id']?>" method="post">
+                    <form action="<?=$config?>edit_cat.php?id=<?=$category['Id']?>" method="post">
                         <input type="text" value="<?= $category['Name'] ?>" name="catName">
-                        <button type="submit"><i class="fas fa-pencil-alt"></i></button>
-                        <a class="remove" href="delete_cat.php?id=<?= intval($category['Id']) ?>"><i class="fa fa-remove"></i></a>
+                        <button type="submit"><i class="fa fa-pencil"></i></button>
                     </form>
-
+                    <a class="remove" href="<?=$config?>delete_cat.php?id=<?= intval($category['Id']) ?>"><i class="fa fa-remove"></i></a>
                 </td>
             </tr>
         <?php endforeach ?>
     </tbody>
 </table>
-<!-- ----------------------------------- AUTHOR ------------------------- -->
+
 <hr/>
+
 <nav style="margin-bottom: 5px; margin-top: 30px; ">
     <a>Rédiger une nouvelle auteur</a>
-    <form action="add_aut.php" method="post">
+    <form action="<?=$config?>add_aut.php" method="post">
         <input type="text" name="firstName" placeholder="prénom">
         <input type="text" name="lastName" placeholder="nom">
         <input type="submit" value="créer">
@@ -92,21 +91,21 @@
     <tbody>
         <?php foreach($authors as $author): ?>
             <tr>
-
+                
                 <td><?= htmlspecialchars($author['Id'])?></td>
                 <td>
-                    <form action="edit_aut.php?id=<?=$author['Id']?>" method="post">
+                    <form action="<?=$config?>edit_aut.php?id=<?=$author['Id']?>" method="post">
                         <input type="text" value="<?= $author['FirstName'] ?>" name="firstName">
                         <input type="text" value="<?= $author['LastName'] ?>" name="lastName">
-                        <button type="submit"><i class="fas fa-pencil-alt"></i></button>
+                        <button type="submit"><i class="fa fa-pencil"></i></button>
                     </form>
+                    <a class="remove" href="<?=$config?>delete_aut.php?id=<?= intval($author['Id']) ?>"><i class="fa fa-remove"></i></a>
                 </td>
             </tr>
         <?php endforeach ?>
     </tbody>
 </table>
 
-<!-- -------------------------------------- USER ------------------------- -->
 <hr/>
 
 <nav style="margin-bottom: 20px; margin-top: 30px; ">
@@ -130,7 +129,7 @@
                 <td><?= htmlspecialchars($user['LastName']) ?></td>
                 <td><?= htmlspecialchars($user['Mail'])?></td>
                 <td>
-                        <form action="update_user.php?id=<?= $user['Id'] ?>" method="post">
+                        <form action="<?=$config?>update_user.php?id=<?= $user['Id'] ?>" method="post">
                             <select name="role">
                                 <option <?php if($user['Role'] == 'user') {?> selected <?php }?> value="user" >User</option>
                                 <option <?php if($user['Role'] == 'admin') {?> selected <?php }?> value="admin" >Admin</option>

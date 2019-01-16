@@ -1,12 +1,15 @@
 <?php
 session_start();
 
+include 'application/hash.php';
+
 $template = 'register';
 
 
 if(empty($_POST) == false) {
 
   //var_dump($_POST);
+  $hashPassword = password_hash($_POST['Password'], PASSWORD_DEFAULT);
 
   include 'application/bdd_connexion.php';
 
@@ -25,7 +28,7 @@ if(empty($_POST) == false) {
       VALUES (?, ?, ?, ?, ?, "user")'
 	);
 
-	$query->execute( [ $_POST['FirstName'], $_POST['LastName'], $_POST['NickName'], $_POST['Mail'], $_POST['Password'] ] );
+	$query->execute( [ $_POST['FirstName'], $_POST['LastName'], $_POST['NickName'], $_POST['Mail'], $hashPassword] );
 
   header('Location: login.php');
 

@@ -26,5 +26,36 @@ $adminPost = $query->fetchAll(PDO::FETCH_ASSOC);
 
 //var_dump($adminPost);
 
+$query = $pdo->prepare(
+    'SELECT*
+        FROM
+           Category'
+);
+
+$query->execute();
+$categories = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$query = $pdo->prepare(
+    'SELECT*
+        FROM
+           Author'
+);
+
+$query->execute();
+$authors = $query->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($authors);
+
+
+$query = $pdo->prepare(
+    'SELECT*
+        FROM
+           Users'
+);
+
+$query->execute();
+$users = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$template = 'admin';
 include 'layout.phtml';
+
 ?>
