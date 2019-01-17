@@ -9,12 +9,6 @@ var Perso = function(name, pv, pa, pd, pm) {
   this.pm   = pm;
 }
 
-Perso.prototype.affichage = function() {
-
-  $('#affichage').append('<p>'+this.name+': '+this.pv+'  attack : '+this.pa+' defense : '+this.pd+' magic : '+this.pm+'</p>');
-  //console.log();
-}
-
 Perso.prototype.attack = function(perso) {
 
 	var degats = this.pa - perso.pd;
@@ -24,12 +18,13 @@ Perso.prototype.attack = function(perso) {
 		console.log(perso.name +'ne sent plus rien....' );
 		degats = 10
 	}
-	perso.hp -= degats
+	perso.pv -= degats
 
 	console.log(this.name +' Attaque, il enlève '+ degats + ' pv a '+ perso.name )
 
 	console.log(perso.name +' a  '+ perso.pv+ ' pv' );
 }
+
 
 Perso.prototype.defend = function() {
 
@@ -39,7 +34,7 @@ Perso.prototype.defend = function() {
 
 		this.pd += ratio/2;
 
-		console.log(this.name +'a une defense à :'+ this.pd);
+		console.log(this.name +' a une defense à :'+ this.pd);
 }
 
 

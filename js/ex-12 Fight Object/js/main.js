@@ -5,6 +5,9 @@ var prog = new Program();
 
 
 console.log(prog);
+
+
+
 /*
 console.log(tigrou);
 console.log(winney);
