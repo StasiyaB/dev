@@ -1,5 +1,5 @@
 'use strict';
-
+//create prototype of the person
 var Perso = function(name, pv, pa, pd, pm) {
 
   this.name = name;
@@ -19,6 +19,10 @@ Perso.prototype.attack = function(perso) {
 		degats = 10
 	}
 	perso.pv -= degats
+
+  if  (perso.pv <= 0) {
+		perso.pv = 0;
+	}
 
 	console.log(this.name +' Attaque, il enlève '+ degats + ' pv a '+ perso.name )
 
@@ -45,6 +49,10 @@ Perso.prototype.leave = function(perso) {
 		console.log(this.name +  ' jete un sort,il enlève '+ degats + ' pv a '+ perso.name);
 		perso.pv -= degats;
 		this.pm -=  degats;
+
+		if  (perso.pv <= 0) {
+			perso.pv = 0;
+		}
 		console.log(perso.name +' a  '+ perso.pv+ ' pv' );
 	} else {
 		console.log('Vous n avez plus de point de magie....')

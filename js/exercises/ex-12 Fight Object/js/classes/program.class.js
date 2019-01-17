@@ -1,10 +1,10 @@
 'use strict';
-
+//create prototype programe which will instansified the actions of the persons
 var Program = function() {
 
-  this.tigrou = new Perso ('Tigrou',300, 50, 7, 120);
+  this.tigrou = new Perso ('Tigrou',280, 45, 18, 160);
 
-  this.winney = new Perso ('Winney', 280, 45, 18, 160);
+  this.winney = new Perso ('Winney', 300, 50, 7, 120);
 
   this.affichage();
 
@@ -35,7 +35,7 @@ Program.prototype.affichage = function() {
 
 Program.prototype.onClickAttack = function(event) {
 
-  event.preventDefault();
+  event.preventDefault(); //prevent reloade page for the button
 
   this.tigrou.attack(this.winney);
   this.contre();
