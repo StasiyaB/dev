@@ -1,5 +1,8 @@
-'use strict';
+**************************** slate ***********************************
 
+
+
+************************* program **********************************
 var Program = function(canvas)
 {
 
@@ -30,3 +33,15 @@ Program.prototype.onClickPenColor = function(event) {
 
 	this.pen.color = color;
 }
+
+************************* pen *****************************
+
+
+
+
+
+************************* main ***************************
+
+var canvas = document.getElementById('slate');
+
+var prog = new Program(canvas);

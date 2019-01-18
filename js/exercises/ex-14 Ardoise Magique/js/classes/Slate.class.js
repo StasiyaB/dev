@@ -1,12 +1,12 @@
 'use strict';
 
-var Slate = function(canvas)
+var Slate = function(pen, canvas)
 {
 	  this.canvas          = canvas; // where is the action in HTML (var canvas = document.getElementById('slate');)
     this.context         = this.canvas.getContext('2d'); // how it (this.canvas = canvas;) will appear in HTML
     this.currentLocation = null; // the beginnig of the action
     this.isDrawing       = false; // by default there is no action
-    this.pen             = new Pen(); // {color : 'black' , size : 1}
+    this.pen             = pen; // {color : 'black' , size : 1}
 
     this.canvas.addEventListener('mousedown',  this.onMouseDown.bind(this)); //give the beginning location
     this.canvas.addEventListener('mousemove',  this.onMouseMove.bind(this)); //change the location in moving
