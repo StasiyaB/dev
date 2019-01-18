@@ -1,8 +1,8 @@
 'use strict';
 
-var canvas = document.getElementById('slate')
+var canvas = document.getElementById('slate');
 
-var slate = new Slate(canvas);
+var slate = new Slate(canvas);// argument let us create a lot of the same objects
 
 console.log(slate);
 

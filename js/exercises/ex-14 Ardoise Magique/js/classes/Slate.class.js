@@ -2,11 +2,11 @@
 
 var Slate = function(canvas)
 {
-	  this.canvas          = canvas;
-    this.context         = this.canvas.getContext('2d');
-    this.currentLocation = null;
-    this.isDrawing       = false;
-    this.pen             = new Pen();
+	  this.canvas          = canvas; // where is the action in HTML (var canvas = document.getElementById('slate');)
+    this.context         = this.canvas.getContext('2d'); // how it (this.canvas = canvas;) will appear in HTML
+    this.currentLocation = null; // the beginnig of the action
+    this.isDrawing       = false; // by default there is no action
+    this.pen             = new Pen(); // {color : 'black' , size : 1}
 
     this.canvas.addEventListener('mousedown',  this.onMouseDown.bind(this)); //give the beginning location
     this.canvas.addEventListener('mousemove',  this.onMouseMove.bind(this)); //change the location in moving
@@ -14,9 +14,10 @@ var Slate = function(canvas)
     this.canvas.addEventListener('mouseleave', this.onMouseUpAndLeave.bind(this)); // prevent to goout the bord of the canvas
 
 }
-
-Slate.prototype.getMouseLocation = function(event)
-{
+/* If to write it in associative table:
+Slate {canvas: canvas#slate.slate, context: CanvasRenderingContext2D, currentLocation: null, isDrawing: false, pen: Pen}
+*/
+Slate.prototype.getMouseLocation = function(event) {
 
 	var offset = this.canvas.getBoundingClientRect();
 

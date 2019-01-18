@@ -1,6 +1,6 @@
 'use strict';
 
-var Pen = function() {
+var Pen = function () {
 
     this.color = 'black';
     this.size  = 1;
@@ -9,5 +9,8 @@ var Pen = function() {
 Pen.prototype.configure = function(context) {
 
     context.strokeStyle = this.color;
-    context.lineWidth   = this.size;    
+    context.lineWidth   = this.size;
+
+
+    console.log('coucou');
 };
