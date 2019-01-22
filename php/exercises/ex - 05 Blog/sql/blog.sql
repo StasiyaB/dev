@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 15 jan. 2019 à 17:23
+-- Généré le :  mar. 22 jan. 2019 à 12:43
 -- Version du serveur :  5.7.24-0ubuntu0.16.04.1
 -- Version de PHP :  7.2.11-2+ubuntu16.04.1+deb.sury.org+1
 
@@ -62,11 +62,15 @@ CREATE TABLE `Category` (
 
 INSERT INTO `Category` (`Id`, `Name`) VALUES
 (1, 'Jeux-Video'),
-(2, 'Voyages'),
 (3, 'Restauration'),
 (4, 'a'),
 (5, 'Music'),
-(6, 'Dogs');
+(6, 'Dogs'),
+(7, 'Travel'),
+(8, 'Food'),
+(9, 'Sport'),
+(10, 'Sport'),
+(11, 'Sport');
 
 -- --------------------------------------------------------
 
@@ -134,12 +138,9 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`Id`, `Mail`, `Password`, `FirstName`, `LastName`, `NickName`, `Role`) VALUES
-(1, 'baryash.anastasiya@gmail.com', 'kbcbxrf', 'Anastasiya', 'Baryash', 'Chmfox', 'admin'),
-(2, 'gigi@gogo.com', 'azert', 'Gigi', 'White', 'gigi', 'user'),
-(3, 'lama@gogo.com', 'wxcvbn', 'Lama', 'Black', 'lama', 'user'),
-(4, 'ginger@gogo.com', 'qsdfg', 'Kiki', 'Red', 'ginger', 'user'),
-(6, 'ginger@gogo.com', 'qsdfg', 'Kiki', 'Red', 'ginger', 'user'),
-(7, 'green@gogo.com', 'poiuy', 'Dodo', 'Green', 'green', 'user');
+(17, 'gigi@gogo.com', '$2y$10$CX31NNXc7Gb0wMJCAElC3eM2Bhq8n9gQudw.4R6/57iwFI62BAZ.O', 'Gigi', 'White', 'gigi', 'user'),
+(18, 'lada@gogo.com', '$2y$10$QbeCp0.YTHU8Hjzu8/e.aeBuQMOdM7XLCUISUq4fZ9XOQNoB.2LLa', 'Lada', 'Dance', 'lada', 'user'),
+(19, 'baryash.anastasiya@gmail.com', '$2y$10$/g.Ej8A0arxvrFG9ytDuZOflqrypi.hdS49HZTpUx88msbLiey1uO', 'Stasiya', 'B', 'StasiyaB', 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -189,7 +190,7 @@ ALTER TABLE `Author`
 -- AUTO_INCREMENT pour la table `Category`
 --
 ALTER TABLE `Category`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `Comments`
@@ -207,7 +208,7 @@ ALTER TABLE `Post`
 -- AUTO_INCREMENT pour la table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
