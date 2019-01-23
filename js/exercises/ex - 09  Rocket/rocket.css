@@ -14,7 +14,7 @@ body {
 }
 
 #firingButton {
-    
+
     position: absolute;
     left:100px;
     bottom: 100px;
@@ -32,7 +32,7 @@ body {
     top:100px;
     width: 314px;
     height: 200px;
-    background-image: url('../images/billboard.png');
+    background-image: url('images/billboard.png');
     background-size: auto 100%;
     background-repeat: no-repeat;
 }
@@ -44,10 +44,10 @@ body {
     position: absolute;
     right: 15px;
     top: 15px;
-    
+
     font-size: 5rem;
     line-height: 170px;
-    color: white;  
+    color: white;
 }
 
 #rocket {
