@@ -7,7 +7,8 @@ var ColorPalette = function() {
 	  this.pickedColor = { red: 0, green: 0, blue: 0 };
 
     this.build();
-  //  this.appear();
+    this.canvas.addEventListener('click', this.onClickOnPickerCanvas.bind(this));
+
 };
 
 ColorPalette.prototype.build = function() {
@@ -39,10 +40,33 @@ ColorPalette.prototype.build = function() {
 
     this.context.fillStyle = gradient;
     this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+
+    //console.log();
 };
 
 ColorPalette.prototype.appear = function () {
 
   this.canvas.classList.toggle('hide');
  //console.log('palette');
+}
+
+ColorPalette.prototype.onClickOnPickerCanvas = function(event) {
+
+	var offset = this.canvas.getBoundingClientRect();
+
+    var x = event.clientX - offset.left;
+    var y = event.clientY - offset.top;
+
+    var colorRGB = this.context.getImageData(x, y, 1, 1);
+
+    this.pickedColor.red = colorRGB.data[0];
+    this.pickedColor.green = colorRGB.data[1];
+	  this.pickedColor.blue = colorRGB.data[2];
+
+    console.log(colorRGB);
+
+    $.event.trigger('magical-slate:pick-color');
+    // var event = new Event('magical-slate:pick-color');
+
 }

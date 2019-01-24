@@ -35,6 +35,16 @@ Program.prototype.start = function() {
 		var paletteColor = document.getElementById('tool-color-picker');
 	   paletteColor.addEventListener('click', this.colorPalette.appear.bind(this.colorPalette));
 		 //console.log(paletteColor);
+
+  	$(document).on('magical-slate:pick-color', this.onPickColor.bind(this));
+}
+
+Program.prototype.onPickColor = function()
+{
+console.log('bbb');
+	var color = this.colorPalette.pickedColor;
+	this.pen.color = 'rgb('+color.red+','+color.green+','+color.blue+')';
+
 }
 //1st action
 Program.prototype.onClickPenColor = function(event) {
