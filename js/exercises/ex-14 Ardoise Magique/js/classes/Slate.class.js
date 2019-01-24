@@ -23,7 +23,7 @@ Slate.prototype.getMouseLocation = function(event) {
 
   var location = { x: event.clientX - offset.left, y: event.clientY - offset.top };
 
-    console.log(location);
+    //console.log(location);
 
   return location;
 }
@@ -31,7 +31,7 @@ Slate.prototype.getMouseLocation = function(event) {
 
  Slate.prototype.onMouseDown = function(event) {
 
- 	console.log('coucou ');
+ 	//console.log('coucou ');
 
     this.currentLocation = this.getMouseLocation(event);
 
@@ -58,3 +58,9 @@ Slate.prototype.getMouseLocation = function(event) {
 
    this.isDrawing = false;
  }
+
+ Slate.prototype.clear = function(event) {
+
+  	this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+// the function called in Program.prototype.start = function()
+  }
