@@ -11,9 +11,9 @@ class Time {
 
     public function __construct($hours, $minutes, $seconds) {
 
-    		$this->hours = $hours;
+    		  $this->hours = $hours;
         	$this->minutes = $minutes;
-    		$this->seconds = $seconds;
+    		  $this->seconds = $seconds;
 
     	}
 
