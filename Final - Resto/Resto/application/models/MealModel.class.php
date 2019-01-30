@@ -17,7 +17,7 @@ class MealModel {
   public function find($menuId){
 
     $dataMenu = new Database ();
-    $meal = $dataMenu->query ('
+    $meal = $dataMenu->queryOne ('
 
                       SELECT *
                       FROM Meal

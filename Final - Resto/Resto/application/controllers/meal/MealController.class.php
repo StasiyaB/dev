@@ -12,9 +12,9 @@ class MealController
     	 */
        $menuId = $_GET['id'];
        $menuModel = new MealModel();
-       $canard = $menuModel->find($menuId);
+       $menu = $menuModel->find($menuId);
 
-        echo json_encode($canard);
+        echo json_encode($menu);
         exit();
     }
 
