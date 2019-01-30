@@ -41,7 +41,7 @@
 				</select>
 				<span> / </span>
 				<select name="birthYear">
-          <?php for($year = 2019; $year >= 1900; $year--): ?>
+          <?php for($year = 1900; $year <= date('Y') - 18; $year++): ?>
               <option value="<?= $year ?>"><?= $year ?></option>
           <?php endfor ?>
 	      </select>

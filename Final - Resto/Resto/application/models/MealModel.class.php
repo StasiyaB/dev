@@ -14,6 +14,17 @@ class MealModel {
     return $meal;
   }
 
+  public function find($menuId){
 
+    $dataMenu = new Database ();
+    $meal = $dataMenu->query ('
 
+                      SELECT *
+                      FROM Meal
+                      WHERE Id = ?',
+                      [ $menuId ]
+                  );
+
+      return $meal;
+  }
 }
