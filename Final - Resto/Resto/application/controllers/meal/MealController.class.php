@@ -10,12 +10,20 @@ class MealController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
-       $menuId = $_GET['id'];
-       $menuModel = new MealModel();
-       $menu = $menuModel->find($menuId);
 
-        echo json_encode($menu);
-        exit();
+       if(array_key_exists('id', $_GET) == true && ctype_digit($_GET['id']) == true)
+        {
+          $menuId = $_GET['id'];
+          $menuModel = new MealModel();
+          $menu = $menuModel->find($menuId);
+
+          $http->sendJsonResponse($menu);
+
+        } else {
+
+        	$http->redirectTo('/');
+
+        }
     }
 
     public function httpPostMethod(Http $http, array $formFields)

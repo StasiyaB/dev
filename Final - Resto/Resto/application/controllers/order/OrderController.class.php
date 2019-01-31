@@ -10,14 +10,18 @@ class OrderController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
-       $mealModel = new MealModel();
-       $dataMenu = $mealModel->showMeal();
-       //var_dump( $dataMenu);
+       if(array_key_exists('firstName', $_SESSION) == false) {
 
-       return [
-         'menu' => $dataMenu
-       ];
+    		$http->redirectTo('/user/login/');
+    	}
 
+        $mealModel = new MealModel();
+        $dataMenu = $mealModel->showMeal();
+        //var_dump( $dataMenu);
+
+        return [
+          'menu' => $dataMenu
+        ];
     }
 
     public function httpPostMethod(Http $http, array $formFields)
