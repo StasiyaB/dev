@@ -55,6 +55,6 @@ BasketSession.prototype.add = function(mealId, name, quantity, salePrice) {
 
 BasketSession.prototype.build = function (response) {
 
-  console.log(response);
+  console.log(response);  
 
 }
