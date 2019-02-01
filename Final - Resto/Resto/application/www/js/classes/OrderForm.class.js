@@ -48,6 +48,6 @@ OrderForm.prototype.mealToOrder = function(event) {
   //console.log(quantity);
   //console.log(salePrice);
 
-  this.basket.add(mealId, name, quantity, salePrice);
+  this.basket.add(mealId, name, quantity, salePrice, img);
 
 }
