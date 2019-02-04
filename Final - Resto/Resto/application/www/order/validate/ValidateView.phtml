@@ -1,14 +1,21 @@
 <h2><i class="fa fa-check"></i> Payer la commande</h2>
 
 <section class="invoice">
-    <p><strong></strong></p>
-    <p></p>
-    <p> <span class="city"></span></p>
+    <p><strong><?= $_SESSION['lastName'];?> <?= $_SESSION['firstName'];?></strong></p>
+    <p><?= $_SESSION['address'];?></p>
+    <p><?= $_SESSION['zipCode'];?><span class="city"><?= $_SESSION['city']?></span></p>
 </section>
 
 <table class="generic-table meal-list">
     <caption>Récapitulatif de la commande</caption>
-    
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th class="number">Quantité</th>
+        <th class="number">Prix Unitaire</th>
+        <th class="number">Prix Total</th>
+      </tr>
+    </thead>
     <tfoot>
         <tr>
             <td colspan="3">Total HT</td>
@@ -27,7 +34,7 @@
 
     </tbody>
 </table>
-
+<em><p style="text-align: center;">Commande validé le <strong><?= date("d.m.Y") ?></strong></p></em>
 <hr>
 <h3>Merci de bien vouloir procéder au paiement de la commande.</h3>
 <form class="generic-form" action="<?= $requestUrl ?>/order/payment" method="POST">

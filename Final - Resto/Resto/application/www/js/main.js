@@ -12,7 +12,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 console.log(document.location.href);
 
-if (document.location.href.indexOf('order') != -1 && document.location.href.indexOf('order/validate') == -1) {
+if (document.location.href.indexOf('order') != -1 && document.location.href.indexOf('order/validate') == -1 && document.location.href.indexOf('order/payment') == -1) {
     console.log('JS orderForm');
     var order = new OrderForm();
 }

@@ -92,7 +92,7 @@ BasketSession.prototype.build = function (response) {
   for (var j = 0; j < this.item.length; j ++) {
 
     this.tr = $('<tr>');
-      this.tr.append('<td class="number">'+this.item[j].quantity+'</td><td class="number"><strong>'+this.item[j].name+'</strong></td><td class="number">'+this.item[j].salePrice+'€</td><td class="number">'+parseFloat(this.item[j].quantity)*parseFloat(this.item[j].salePrice)+'€</td><td class="number"><button class="button button-cancel small" title="Supprimer article" data-index="'+j+'"><i class="fa fa-trash"></i></button></td>');
+      this.tr.append('<td class="number">'+this.item[j].quantity+'</td><td class="number"><strong>'+this.item[j].name+'</strong></td><td class="number">'+this.item[j].salePrice+'€</td><td class="number">'+parseFloat(this.item[j].quantity)*parseFloat(this.item[j].salePrice)+'€</td><td class="number"><button class="button button-cancel trash small" title="Supprimer article" data-index="'+j+'"><i class="fa fa-trash"></i></button></td>');
 
       this.tr.append(this.td);
       this.table.append(this.tr);
@@ -100,7 +100,7 @@ BasketSession.prototype.build = function (response) {
   }
   $('#order-summary').html(this.table);
 
-  this.trash = document.querySelectorAll('.button-cancel');
+  this.trash = document.querySelectorAll('.trash');
 
   for(var k = 0; k < this.trash.length; k++){
 

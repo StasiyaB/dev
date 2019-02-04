@@ -60,6 +60,9 @@ class UserModel {
 			$_SESSION['email']     = $client['Email'];
 			$_SESSION['firstName'] = $client['FirstName'];
 			$_SESSION['lastName']  = $client['LastName'];
+      $_SESSION['address']   = $client['Address'];
+      $_SESSION['city']      = $client['City'];
+      $_SESSION['zipCode']   = $client['ZipCode'];
 
       $http = new Http();
       $http->redirectTo('/');

@@ -9,18 +9,29 @@ console.log(this.order.item);
 
 ValidateOrder.prototype.show = function (response) {
 
-  var table = $('<table class="generic-table">');
-  table.append('<tr><th>Nom</th><th class="number">Quantité</th><th class="number">Prix Unitaire</th><th class="number">Prix Total</th></tr>');
+    $('.meal-list tbody').empty();
+
+    var totalHT = 0;
 
     for (var l = 0; l < this.order.item.length; l ++) {
 
+        totalHT += parseFloat(this.order.item[l].quantity)*parseFloat(this.order.item[l].salePrice);
+
+        var tva = totalHT * 0.2;
+        var totalttc = totalHT + tva;
+
         var tr = $('<tr>');
 
-        tr.append('<td>'+this.order.item[l].name+'</td><td>'+this.order.item[l].quantity+'</td><td>'+this.order.item[l].salePrice+' €</td><td>'+parseFloat(this.order.item[l].quantity)*parseFloat(this.order.item[l].salePrice)+' €</td>');
+        tr.append('<td><img src="'+this.order.item[l].img+'"></img></td><td>'+this.order.item[l].name+'</td><td>'+this.order.item[l].quantity+'</td><td>'+this.order.item[l].salePrice+' €</td><td>'+parseFloat(this.order.item[l].quantity)*parseFloat(this.order.item[l].salePrice)+' €</td>');
 
+        $('.meal-list tbody').append(tr);
 
-        table.append(tr);
     }
+    // totalHT = 9.2
+    $('#totalht').text(totalHT.toFixed(2)+ ' €' );
+    $('#tva').text(tva.toFixed(2)+ ' €' );
+    $('#totalttc').text(totalttc.toFixed(2)+ ' €' );
 
-    $('.meal-list').html(table);
+    var order = JSON.stringify(this.order.item);
+    $('#orderValidation').val(order);
 }

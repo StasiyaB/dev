@@ -43,6 +43,7 @@ OrderForm.prototype.mealToOrder = function(event) {
   var name = $('#meal').find('option:selected').text();
   var quantity = $('#quantity').val();
   var salePrice = $('#meal-details strong').text();
+  var img = $('#meal-details img').attr('src');
   //console.log(mealId, name, quantity, salePrice);
   //console.log(name);
   //console.log(quantity);
