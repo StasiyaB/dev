@@ -13,11 +13,16 @@ class BookingController
 
     public function httpPostMethod(Http $http, array $formFields)
     {
+      if(array_key_exists('firstName', $_SESSION) == false) {
+
+       $http->redirectTo('/user/login/');
+     }
       //var_dump($_POST);
       $book = new  BookingModel();
-      $userId = $_SESSION['id'];
-      $book->bookPlace($userId, $_POST);
+
+      $book->bookPlace($_SESSION['id'], $_POST);
 
       var_dump($book);
+      $http->redirectTo('/');
     }
 }
