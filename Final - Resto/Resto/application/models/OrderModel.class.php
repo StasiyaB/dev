@@ -23,7 +23,42 @@ public function addOrder($userId) {
        ]);
 
        return $this->orderId;
-
   }
+public function addOrderLine($orderId, $invoice) {
 
+      $dataOrder = new Database ();
+
+      $this->orderId = $dataOrder->executeSql ('
+      INSERT INTO
+        `OrderLine`
+        (QuantityOrdered,
+         Meal_Id,
+         PriceEach,
+         Order_Id
+        )
+      VALUES
+         (?, ?, ?, ?)',
+
+        [
+          $invoice->quantity, $invoice->mealId, $invoice->safePrice, $orderId
+       ]);
+}
+public function addTotalAmount($orderId, $totalAmount) {
+
+      $taxAmount = $totalAmount*0.2;
+
+      $dataOrder  = new Database ();
+      $this->$totalAmount = $dataOrder->executeSql('
+      UPDATE
+        `Order`
+      SET
+        TotalAmount = ?,
+         TaxRate = "20",
+         TaxAmount = ?
+       WHERE ID = ?',
+
+      [
+        $totalAmount, $taxAmount,$orderId
+      ]);
+ }
 }
