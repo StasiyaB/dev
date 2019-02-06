@@ -13,8 +13,11 @@ class BookingController
 
     public function httpPostMethod(Http $http, array $formFields)
     {
+      //var_dump($_POST);
       $book = new  BookingModel();
-      $book->bookPlace($_POST);
+      $userId = $_SESSION['id'];
+      $book->bookPlace($userId, $_POST);
+
       var_dump($book);
     }
 }

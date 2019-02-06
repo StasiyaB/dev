@@ -2,21 +2,32 @@
 
 class BookingModel {
 
-  public function bookPlace() {
+  public function bookPlace($userId, $post) {
+
 
     $reserv = new Database ();
-    $reserv = executeSql ('
+    $place = $reserv->executeSql ('
 
             INSERT INTO
               Booking
-                (Id,
-                 User_Id,
+                (User_Id,
                  BookingDate,
                  BookingTime,
                  NumberOfSeats,
                  CreationTimestamp)
             VALUES
-                ()',
-            );
+                (?,?,?,?, NOW())',
+
+            [
+              $userId,
+              $post ['bookingYear'].'-'.
+              $post ['bookingMonth'].'-'.
+              $post ['bookingDay'],
+              $post ['bookingHour'].':'.
+              $post ['bookingMinute'],
+              $post ['numberOfSeats']
+            ]);
+
+      $http = new Http();
   }
 }
