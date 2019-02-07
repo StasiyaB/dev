@@ -4,6 +4,20 @@ class OrderModel {
 
 private $orderId;
 
+
+public function findOneOrder($orderId) {
+      $dataOrder = new Database ();
+      $order = $dataOrder->queryOne ('
+
+                        SELECT *
+                        FROM `Order`
+                        WHERE id = ?',
+                        [ $orderId ]
+                    );
+
+        return $order;
+}
+
 public function addOrder($userId) {
 
       $dataOrder = new Database ();
