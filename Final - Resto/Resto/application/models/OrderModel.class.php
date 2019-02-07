@@ -18,6 +18,19 @@ public function findOneOrder($orderId) {
         return $order;
 }
 
+public function updateStatus($orderId) {
+        $dataOrder = new Database();
+
+        // Insertion de la commande dans la base de donées.
+        $order = $dataOrder->queryOne
+        (
+            'UPDATE `Order` SET Status = "paid" WHERE Id =?',
+            [ $orderId ]
+        );
+
+}
+
+
 public function addOrder($userId) {
 
       $dataOrder = new Database ();
