@@ -1,0 +1,124 @@
+<!----------------testPost.php------------------------->
+
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'root', 'troiswa');
+
+$pdo->exec('SET NAMES UTF8');
+
+$query = $pdo->prepare(
+	    'SELECT
+	        *
+	     FROM testTable
+		 WHERE Id=1'
+	);
+
+$query->execute();
+$str = $query->fetch(PDO::FETCH_ASSOC);
+
+
+
+include 'testPost.phtml';
+
+?>
+
+
+
+
+
+<!----------------testPost.phtml------------------------->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post</title>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+</head>
+<body>
+	<p><?= $str['champText'] ?></p>
+	<form>
+		<input type="text" name="changedString" id="changedString">
+		<input id="changeText" type="submit" name="modifier">
+	</form>
+</body>
+<script type="text/javascript" src="ajax.js"></script>
+</html>
+
+
+
+
+
+<!----------------modif.php------------------------->
+
+<?php
+
+if(empty($_POST) == false) {
+
+
+	$pdo = new PDO('mysql:host=localhost;dbname=test', 'root', 'troiswa');
+
+	$pdo->exec('SET NAMES UTF8');
+
+	$query = $pdo->prepare(
+		    'UPDATE testTable SET champText=?  WHERE Id=1'
+		);
+
+	$query->execute([ $_POST['query'] ]);
+
+
+
+	echo json_encode($_POST);
+	exit();
+
+}
+
+?>
+
+
+
+
+<!----------------ajax.js------------------------->
+<script>
+
+
+
+function onAjaxChangeDb(event) {
+
+    event.preventDefault();
+
+	var query = $('#changedString').val();
+
+    console.log(query);
+
+	var value = { 'query': query }
+
+    $.ajax({
+        url: "modif.php",
+        type: "POST",
+        data: value,
+    })
+	.done(callB)
+	.fail( function(error) {
+
+        console.log(error);
+
+    });
+
+
+}
+
+
+function callB(res) {
+
+	console.log(JSON.parse(res));
+
+	var response = JSON.parse(res)
+
+	$('#para').text(response.query);
+}
+
+$('#changeText').on('click', onAjaxChangeDb);
+
+
+</script>
