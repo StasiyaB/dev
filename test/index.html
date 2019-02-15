@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+    <title>test</title>
+  </head>
+
+  <body>
+  <ul class="flex-list">
+      <li>
+        <div class="tooltip">
+          <div class="progress-bar" data-percent="25" data-duration="1000" data-color="RGBA(0,112,187,0.38),#0070BB"></div>
+        </div>
+        <div class="tooltip-text">
+          HTML
+        </div>
+      </li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="jQuery-plugin-progressbar.js"></script>
+    <script> $(".progress-bar").loading();</script>
+  </body>
+</html>

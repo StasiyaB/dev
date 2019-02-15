@@ -1,0 +1,87 @@
+.flex-list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+}
+.flex-list li {
+  list-style: none;
+}
+.flex-list li .progress-bar1 {
+  display: block;
+}
+/*.flex-list li svg {
+
+  display: block;
+}*/
+.tooltip-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* **************************** */
+
+.tooltip {
+  position: relative;
+  /*width: 100%;*/
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* **************************** */
+.progress-bar {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin:0 auto;
+}
+
+.progress-bar div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.progress-bar div span {
+  position: absolute;
+  font-family: Arial;
+  font-size: 25px;
+  line-height: 75px;
+  height: 75px;
+  width: 75px;
+  left: 12.5px;
+  top: 12.5px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: none;
+}
+
+.progress-bar .background { background-color: none; }
+
+.progress-bar .rotate {
+  clip: rect(0 50px 100px 0);
+  background-color: none;
+}
+
+.progress-bar .left {
+  clip: rect(0 50px 100px 0);
+  opacity: 1;
+  background-color: none;
+}
+
+.progress-bar .right {
+  clip: rect(0 50px 100px 0);
+  transform: rotate(180deg);
+  opacity: 0;
+  background-color: none;
+}
+
+@keyframes
+toggle {  0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}
