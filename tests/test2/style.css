@@ -1,3 +1,7 @@
+/*:root {
+  background: #fff;
+}
+*/
 span#percent {
   display: block;
   position: absolute;
@@ -78,8 +82,6 @@ li {
 .tooltip-text {
   text-align: center;
   margin-top: 10px;
-
-
 }
 
 .flex-list {
@@ -88,77 +90,6 @@ li {
   padding-left: 0;
 }
 
-/* ********************** ANIMATION ************************ */
-.animation{
-    transform: scale(0);
-    filter: blur(10px);
-    animation-name: zoomIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 2s;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-.animation2 {
-    transform: scale(0);
-    filter: blur(10px);
-    animation-name: zoomIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 3s;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-.animation3 {
-    transform: scale(0);
-    filter: blur(10px);
-    animation-name: zoomIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 4s;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-.animation4 {
-    transform: scale(0);
-    filter: blur(10px);
-    animation-name: zoomIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 5s;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-.animation5 {
-    transform: scale(0);
-    filter: blur(10px);
-    animation-name: zoomIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    animation-delay: 6s;
-    animation-direction: alternate;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-@keyframes zoomIn {
-  0% {
-    transform: scale(.3);
-    filter: blur(10px);
-  }
-  40% {
-    transform: scale(1);
-  }
-  100% {
-    filter: blur(0);
-    transform: scale(1);
-  }
+.hidden {
+  display: none;
 }

@@ -1,26 +1,17 @@
 'use strict';
 
-var TextShower = function ( delay) {
+var TextShower = function (delay, thechnology, word) {
   console.log('text');
 
-  this.word  = document.getElementById('thechnology');
-  //this.delay = delay;
-  this.delay = setInterval(this.showText,  parseInt(delay)*1000);
+  this.delay = setTimeout(this.showText,  parseInt(delay)*1000);
 
-  this.showText();
+this.thechnology = thechnology;
+this.word = word;
 }
 
 TextShower.prototype.showText = function () {
-    console.log('text8');
+  console.log('text9');
 
-
-if (this.delay == true) {
-  this.word.addClass('hidden');
-
-} else {
-
-  clearInterval(this.delay);
-
-}
-
+    this.shower  = document.getElementById(this.thechnology).innerHTML += this.word;
+    console.log(this.word);
 }

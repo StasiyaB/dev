@@ -13,6 +13,15 @@ canvas3.arcMove();
 canvas4.arcMove();
 canvas5.arcMove();
 
-var text1 = new TextShower ('hidden', 1);
-
+/*var text1 = new TextShower (3, 'thechnology', 'HTML');
+var text2 = new TextShower (4, 'thechnology1', 'CSS');
+var text3 = new TextShower (5, 'thechnology2', 'JS');
+var text4 = new TextShower (6, 'thechnology3', 'PHP');
+var text5 = new TextShower (7, 'thechnology4', 'MySQL');
+console.log(text1);
 text1.showText();
+text2.showText();
+text3.showText();
+text4.showText();
+text5.showText();
+*/
