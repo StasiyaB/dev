@@ -33,15 +33,15 @@ Canvas.prototype.arcMove = function(c, can, posX, posY, percent, onePercent, res
         spanPercent.innerHTML = percent.toFixed();
 
         c.beginPath();
-        c.arc( posX, posY, 70, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
+        c.arc( posX, posY, 40, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
         c.strokeStyle = rgb;
-        c.lineWidth = '10';
+        c.lineWidth = '8';
         c.stroke();
 
         c.beginPath();
         c.strokeStyle = hexa;
-        c.lineWidth = '10';
-        c.arc( posX, posY, 70, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
+        c.lineWidth = '8';
+        c.arc( posX, posY, 40, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
         c.stroke();
 
         if( deegres >= result ) clearInterval(acrInterval);

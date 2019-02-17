@@ -14,11 +14,11 @@ var rocket = document.querySelector('#rocket');
 /***********************************************************************************/
 
 function countDown() {
-		
+
 		count.textContent = down;
 
 			if (down <= 0) {
-				
+
 				clearInterval(countDown);
 
 			} else {
@@ -28,7 +28,7 @@ function countDown() {
 }
 
 function launch() {
-		
+
 		var time = setInterval(countDown, 1000);//it lanch the countdown on the bord
 		window.setTimeout(rocketLaunch, 10000);// it will launch the rocket
 		rocketFire();// calls the function which changes the image when the countdown is launched
@@ -43,7 +43,7 @@ function rocketFire() {
 function rocketLaunch () {
 
 		rocket.src="images/rocket3.gif";
-		rocket.classList.add('tookOff'); // adds the attributs to the image - launches the rocket	
+		rocket.classList.add('tookOff'); // adds the attributs to the image - launches the rocket
 }
 
 /************************************************************************************/
@@ -67,18 +67,18 @@ function onClickFiringButton()
 
 	timer = setInterval(countDown, 1000);
 	rocket.src = 'images/rocket2.gif';
-    
+
     window.setTimeout(out, count * 1000)
 
 }
 
 
 function out() {
-	
+
     rocket.src = 'images/rocket3.gif';
     rocket.classList.add('tookOff');
     firingButton.removeEventListener('click', onClickFiringButton);
-    
+
 
 }
 
@@ -87,9 +87,9 @@ function countDown()
 {
 	billboard.textContent = count;
 	count--;
-    
+
     if( count == -1 ){
-        
+
         clearInterval(timer);
         //rocket.src = 'images/rocket3.gif';
         //rocket.classList.add('tookOff');

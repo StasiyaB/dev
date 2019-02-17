@@ -1,0 +1,164 @@
+span#percent {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 18px;
+  transform: translate(-50%, -50%);
+  color: #0070BB;
+}
+
+span#percent::after {
+  content: '%';
+}
+
+span#percent2 {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 18px;
+  transform: translate(-50%, -50%);
+  color: #0070BB;
+}
+
+span#percent2::after {
+  content: '%';
+}
+
+span#percent3 {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 18px;
+  transform: translate(-50%, -50%);
+  color: #0070BB;
+}
+
+span#percent3::after {
+  content: '%';
+}
+span#percent4 {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 18px;
+  transform: translate(-50%, -50%);
+  color: #0070BB;
+}
+
+span#percent4::after {
+  content: '%';
+}
+span#percent5 {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 18px;
+  transform: translate(-50%, -50%);
+  color: #0070BB;
+}
+
+span#percent5::after {
+  content: '%';
+}
+.tooltip {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+.tooltip-text {
+  text-align: center;
+  margin-top: 10px;
+
+
+}
+
+.flex-list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+/* ********************** ANIMATION ************************ */
+.animation{
+    transform: scale(0);
+    filter: blur(10px);
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.animation2 {
+    transform: scale(0);
+    filter: blur(10px);
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.animation3 {
+    transform: scale(0);
+    filter: blur(10px);
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.animation4 {
+    transform: scale(0);
+    filter: blur(10px);
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.animation5 {
+    transform: scale(0);
+    filter: blur(10px);
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(.3);
+    filter: blur(10px);
+  }
+  40% {
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
