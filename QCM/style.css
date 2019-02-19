@@ -1,0 +1,10 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+h1 {
+  position: absolute;
+   right: 40px ;
+   border: solid red 2px;
+   padding: 20px 5px 15px; 
+}
