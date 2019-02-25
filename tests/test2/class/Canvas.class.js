@@ -26,23 +26,29 @@ Canvas.prototype.arcMove = function(c, can, posX, posY, percent, onePercent, res
 
         deegres +=1;
 
+        if (c !== undefined)
         c.clearRect( 0, 0, can.width, can.height );
 
         percent = deegres / onePercent;
-
+        
+        if (spanPercent !== undefined)
         spanPercent.innerHTML = percent.toFixed();
 
-        c.beginPath();
-        c.arc( posX, posY, 40, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
-        c.strokeStyle = rgb;
-        c.lineWidth = '8';
-        c.stroke();
+        if (c !== undefined) {
 
-        c.beginPath();
-        c.strokeStyle = hexa;
-        c.lineWidth = '8';
-        c.arc( posX, posY, 40, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
-        c.stroke();
+          c.beginPath();
+          c.arc( posX, posY, 40, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
+          c.strokeStyle = rgb;
+          c.lineWidth = '8';
+          c.stroke();
+
+          c.beginPath();
+          c.strokeStyle = hexa;
+          c.lineWidth = '8';
+          c.arc( posX, posY, 40, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
+          c.stroke();
+        }
+
 
         if( deegres >= result ) clearInterval(acrInterval);
 
