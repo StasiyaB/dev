@@ -4,12 +4,16 @@ session_start();
 include 'application/hash.php';
 
 $template = 'register';
+$error = false;
+$emailErr = '';
 
 
 if(empty($_POST) == false) {
 
   //var_dump($_POST);
   $hashPassword = password_hash($_POST['Password'], PASSWORD_DEFAULT);
+  $email = $_POST['Mail'];
+
 
   include 'application/bdd_connexion.php';
 
@@ -28,10 +32,18 @@ if(empty($_POST) == false) {
       VALUES (?, ?, ?, ?, ?, "user")'
 	);
 
-	$query->execute( [ $_POST['FirstName'], $_POST['LastName'], $_POST['NickName'], $_POST['Mail'], $hashPassword] );
+    if(!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+
+    $error = true;
+    $emailErr = "Invalid email.";
+
+
+} else {
+
+  $query->execute( [ $_POST['FirstName'], $_POST['LastName'], $_POST['NickName'], $email, $hashPassword] );
 
   header('Location: login.php');
-
+}
 }
 include 'layout.phtml';
 ?>

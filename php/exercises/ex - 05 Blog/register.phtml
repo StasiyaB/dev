@@ -1,6 +1,12 @@
 
 <h2><i class="fas fa-pencil-alt"></i>Enregistrez vous</h2>
 
+<?php if ($error == true ) {?>
+<div class="popup">
+    <p> <?= $emailErr ?></p>
+</div>
+<?php } ?>
+
 <form class="generic-form" action ="register.php" method="POST">
   <fieldset>
     <legend><i class="fas fa-sticky-note"></i></i>  Nouvel utilisateur</legend>
