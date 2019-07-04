@@ -18,7 +18,7 @@
       </thead>
       <tbody>
           <?php foreach ($orders as $order): ?>
-            <tr>
+          <tr>
             <td><a href="order-form.php?orderNumber=<?= $order['orderNumber'] ?>"><?= $order['orderNumber'] ?></a></td>
             <td><?= $order['orderDate'] ?></td>
             <td><?= $order['shippedDate'] ?></td>
